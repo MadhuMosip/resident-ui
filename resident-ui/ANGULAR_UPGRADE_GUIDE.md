@@ -131,3 +131,4 @@ npm install --legacy-peer-deps
 - Test thoroughly after each major version upgrade
 - Keep your project under version control
 - Consider upgrading in smaller increments if you encounter issues
+

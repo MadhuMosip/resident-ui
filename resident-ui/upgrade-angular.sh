@@ -69,3 +69,4 @@ echo "Angular upgrade completed! Current version:"
 ng version
 
 echo "Please review any breaking changes and update your code accordingly."
+
