@@ -1,4 +1,4 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { AppConfigService } from './app-config.service';
 
@@ -23,7 +23,7 @@ describe('AppConfigService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should load app config from JSON file', async(() => {
+  it('should load app config from JSON file', waitForAsync(() => {
     const mockResponse = {
       baseUrl: 'https://example.com',
       // ... other properties
@@ -38,7 +38,7 @@ describe('AppConfigService', () => {
     expect(service.getConfig()).toEqual(mockResponse);
   }));
 
-  it('should handle HTTP error when loading app config', async(() => {
+  it('should handle HTTP error when loading app config', waitForAsync(() => {
     service.loadAppConfig();
 
     const req = httpTestingController.expectOne('./assets/config.json');
