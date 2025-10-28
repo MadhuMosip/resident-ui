@@ -2,19 +2,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SharedModule } from './shared/shared.module';
+// import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppConfigService } from './app-config.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './shared/material.module';
 import { CommonModule } from "@angular/common";
-import { I18nModule } from 'src/app/i18n.module';
+// import { I18nModule } from 'src/app/i18n.module';
 /*import {NgxCaptchaModule} from '@binssoft/ngx-captcha';*/
-import { CoreModule } from './core/core.module';
+// import { CoreModule } from './core/core.module';
 import { DndDirective } from './dnd.directive';
 import { UserIdleModule } from 'angular-user-idle';
-import { MatKeyboardModule } from 'ngx7-material-keyboard-ios';
+// import { MatKeyboardModule } from 'ngx7-material-keyboard-ios';
 
 const appInitialization = (appConfig: AppConfigService) => {
   return () => {
@@ -24,22 +24,21 @@ const appInitialization = (appConfig: AppConfigService) => {
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DndDirective
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
+    // SharedModule,
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    I18nModule,
-    CoreModule,
-    MatKeyboardModule,
+    // I18nModule,
+    // CoreModule,
+    // MatKeyboardModule,
     UserIdleModule.forRoot({})
   ],
   providers: [
