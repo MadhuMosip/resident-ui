@@ -13,7 +13,7 @@ import { CommonModule } from "@angular/common";
 /*import {NgxCaptchaModule} from '@binssoft/ngx-captcha';*/
 // import { CoreModule } from './core/core.module';
 import { DndDirective } from './dnd.directive';
-import { UserIdleModule } from 'angular-user-idle';
+// import { UserIdleModule } from 'angular-user-idle';
 // import { MatKeyboardModule } from 'ngx7-material-keyboard-ios';
 
 const appInitialization = (appConfig: AppConfigService) => {
@@ -39,7 +39,7 @@ const appInitialization = (appConfig: AppConfigService) => {
     // I18nModule,
     // CoreModule,
     // MatKeyboardModule,
-    UserIdleModule.forRoot({})
+    // UserIdleModule.forRoot({})
   ],
   providers: [
     {

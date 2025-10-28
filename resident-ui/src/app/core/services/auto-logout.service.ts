@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { UserIdleService, UserIdleConfig } from 'angular-user-idle';
-import { MatDialog } from '@angular/material';
+// import { UserIdleService, UserIdleConfig } from 'angular-user-idle';
+// import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 import { BehaviorSubject } from 'rxjs';
 import { ConfigService } from 'src/app/core/services/config.service';
@@ -27,7 +27,7 @@ export class AutoLogoutService {
   activeTimerStart:number = 0;
 
 
-  timer = new UserIdleConfig();
+  // timer = new UserIdleConfig();
   languagelabels: any;
   langCode = localStorage.getItem('langCode');
 
@@ -38,8 +38,8 @@ export class AutoLogoutService {
   dialogreflogout;
 
   constructor(
-    private userIdle: UserIdleService,
-    private dialog: MatDialog,
+    // private userIdle: UserIdleService,
+    // private dialog: MatDialog,
     private configservice: ConfigService,
     private dataStorageService: DataStorageService,
     private router: Router,
@@ -100,7 +100,7 @@ export class AutoLogoutService {
     this.timer.idle = this.idle;
     this.timer.ping = this.ping;
     this.timer.timeout = this.timeout;
-    this.userIdle.setConfigValues(this.timer);
+    // this.userIdle.setConfigValues(this.timer);
   }
 
   /**
@@ -114,9 +114,9 @@ export class AutoLogoutService {
 
 
   keepWatching() {
-    this.userIdle.startWatching();
+    // this.userIdle.startWatching();
     this.changeMessage({ timerFired: true });
-    this.userIdle.onTimerStart().subscribe(
+    /* this.userIdle.onTimerStart().subscribe(
       res => {
         console.log(res)
         if(!res && this.activeTimerStart == 0){
@@ -139,21 +139,21 @@ export class AutoLogoutService {
           }
         }
       }
-    );
+    ); */
 
 
-    this.userIdle.onTimeout().subscribe(() => {
+    /* this.userIdle.onTimeout().subscribe(() => {
       if (!this.isActive) {
         this.onLogOut();
       } else {
         this.userIdle.resetTimer();
         this.activeTimerStart = 0;
       }
-    });
+    }); */
   }
 
   public continueWatching() {
-    this.userIdle.startWatching();
+    // this.userIdle.startWatching();
   }
   /**
    * @description This methoed is used to logged out the user.
@@ -162,9 +162,9 @@ export class AutoLogoutService {
    * @memberof AutoLogoutService
    */
   onLogOut() {
-    this.dialogref.close();
-    this.dialog.closeAll();
-    this.userIdle.stopWatching();
+    // this.dialogref.close();
+    // this.dialog.closeAll();
+    // this.userIdle.stopWatching();
     // this.popUpPostLogOut();
     // this.router.navigate(["dashboard"])
     this.dataStorageService.onLogout().subscribe();
@@ -178,13 +178,13 @@ export class AutoLogoutService {
    */
 
   openPopUp() {
-    this.dialogref = this.dialog.open(DialogComponent, {
+    /* this.dialogref = this.dialog.open(DialogComponent, {
       width: '400px',
       data: {
         case: 'LOGOUTWARNINGPOPUP',
         message: this.languagelabels.preview
       }
-    });
+    }); */
   }
   // popUpPostLogOut() {
   //   this.dialogreflogout = this.dialog.open(DialogComponent, {
