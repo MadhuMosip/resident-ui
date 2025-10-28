@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { AppConfigService } from './app-config.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MaterialModule } from './shared/material.module';
+// import { MaterialModule } from './shared/material.module';
 import { CommonModule } from "@angular/common";
 // import { I18nModule } from 'src/app/i18n.module';
 /*import {NgxCaptchaModule} from '@binssoft/ngx-captcha';*/
@@ -31,7 +31,7 @@ const appInitialization = (appConfig: AppConfigService) => {
     AppRoutingModule,
     // SharedModule,
     BrowserAnimationsModule,
-    MaterialModule,
+    // MaterialModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
