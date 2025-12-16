@@ -9,6 +9,7 @@ import defaultJson from "src/assets/i18n/default.json";
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  standalone: false,
   providers: [],
 })
 
